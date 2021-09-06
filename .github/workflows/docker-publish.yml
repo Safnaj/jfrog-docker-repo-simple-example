@@ -22,6 +22,6 @@ jobs:
           username: ${{ secrets.JFROG_EMAIL }}
           password: ${{ secrets.JFROG_PASSWORD }}
       - name: Build the Docker image
-        run: docker tag ${SERVICE_NAME}:latest --file Dockerfile .
+        run: docker tag my-docker-image:latest ${SERVICE_NAME}:latest
       - name: JFrog Image Push
         run: docker push $SERVICE_NAME:latest
